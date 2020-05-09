@@ -1,0 +1,13 @@
+version: '2'
+services:
+  nodejs:
+    image: node:lts
+    working_dir: /src
+    volumes:
+      - ./src:/src
+  apache2:
+    image: webdevops/apache:latest
+    volumes:
+      - ./public:/app
+    ports:
+      - 8080:80
